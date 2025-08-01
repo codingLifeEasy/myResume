@@ -10,7 +10,6 @@ export class ProfileNavbarComponent {
 
 toggleMenu() {
   this.menuOpen = !this.menuOpen;
-  this.menuOpen = false
 }
 
 }
