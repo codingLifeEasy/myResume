@@ -1,0 +1,39 @@
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 20px;
+  max-width: 700px;  /* Adjust width as needed */
+  margin: auto;
+  padding: 20px;
+}
+.skill-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #1e293b;
+  color: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.8rem 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%
+  }
+
+  span {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  }
+}

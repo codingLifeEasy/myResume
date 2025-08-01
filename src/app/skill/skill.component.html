@@ -1,0 +1,6 @@
+<div class="skills-grid">
+  <div class="skill-card" *ngFor="let skill of skills">
+    <img [src]="skill.icon" alt="{{ skill.name }} icon" />
+    <span>{{ skill.name }}</span>
+  </div>
+</div>
