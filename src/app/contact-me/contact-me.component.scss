@@ -1,0 +1,204 @@
+// // body {
+// //   margin: 0;
+// //   font-family: 'Poppins', sans-serif;
+// //   // background: linear-gradient(270deg, rgb(100, 30, 180), rgb(92, 1, 145)); /* ✅ Fixed gradient */
+// //   min-height: 100vh;
+
+// //   /* ✅ Center container */
+// //   display: flex;
+// //   align-items: center;
+// //   justify-content: center;
+// // }
+
+// .contct-container {
+//   display: flex;
+//   gap: 2rem;
+//   background: rgba(255, 255, 255, 0.05);
+//   backdrop-filter: blur(12px);
+//   border-radius: 20px;
+//   padding: 2rem;
+//   max-width: 1000px;
+//   width: 90%;
+//   color: #fff;
+//   animation: fadeIn 0.8s ease-in-out;
+//   flex-wrap: wrap; /* ✅ Helps responsiveness */
+// }
+
+// /* Contact form */
+// .contact-left {
+//   flex: 1;
+//   min-width: 300px;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// /* Contact inputs */
+// .contact-inputs {
+//   margin: 1rem 0;
+//   padding: 12px;
+//   border: none;
+//   border-radius: 8px;
+//   background: rgba(255, 255, 255, 0.08);
+//   color: #fff;
+//   font-size: 1rem;
+//   outline: none;
+// }
+
+// textarea.contact-inputs {
+//   min-height: 120px;
+// }
+
+// /* Right-side image */
+// .contact-right {
+//   flex: 1;
+//   min-width: 300px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .contact-gif {
+//   max-width: 100%;
+//   border-radius: 15px;
+//   animation: float 3s ease-in-out infinite;
+// }
+
+// /* Animation */
+// @keyframes float {
+//   0%, 100% { transform: translateY(0px); }
+//   50% { transform: translateY(-10px); }
+// }
+
+// /* Responsive design */
+// @media (max-width: 768px) {
+//   .contct-container {
+//     flex-direction: column;
+//     text-align: center;
+//   }
+// }
+// ==========================
+// Contact Form Styles
+// ==========================
+$primary-color: #6c63ff;
+$secondary-color: #ff6584;
+$text-light: #fff;
+$bg-blur: rgba(255, 255, 255, 0.08);
+
+// ---------- Container ----------
+.contct-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  min-height: 64vh;
+  background: linear-gradient(270deg, rgb(100, 30, 180), rgb(92, 1, 145));
+
+  .contact-left {
+    background: $bg-blur;
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 2rem 2.5rem;
+    width: 100%;
+    max-width: 500px;
+    color: $text-light;
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 0.8s ease-in-out;
+
+    // ---------- Title ----------
+    .contact-left-title {
+      text-align: center;
+
+      h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      hr {
+        width: 60px;
+        height: 3px;
+        background: $primary-color;
+        border: none;
+        margin: 0 auto 1.5rem;
+        border-radius: 10px;
+      }
+    }
+
+    // ---------- Inputs ----------
+    .contact-inputs {
+      margin: 0.7rem 0;
+      padding: 12px 15px;
+      border: none;
+      outline: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      color: $text-light;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+
+      &:focus {
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 0 10px rgba(108, 99, 255, 0.4);
+      }
+    }
+
+    textarea.contact-inputs {
+      resize: none;
+      min-height: 120px;
+    }
+
+    // ---------- Button ----------
+    button {
+      background: $primary-color;
+      color: $text-light;
+      padding: 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      margin-top: 1rem;
+
+      &:hover {
+        background: darken($primary-color, 10%);
+        transform: translateY(-2px);
+      }
+
+      &:disabled {
+        background: gray;
+        cursor: not-allowed;
+      }
+    }
+
+    // ---------- Messages ----------
+    p {
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 0.8rem;
+    }
+  }
+}
+
+// ---------- Animations ----------
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ---------- Responsive ----------
+@media (max-width: 600px) {
+  .contct-container {
+    padding: 1.5rem;
+
+    .contact-left {
+      padding: 1.5rem;
+    }
+  }
+}

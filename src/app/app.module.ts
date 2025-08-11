@@ -9,7 +9,10 @@ import { HomeComponent } from './home/home.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { SkillComponent } from './skill/skill.component';
 import { CertificationComponent } from './certification/certification.component';
-
+import { FooterComponent } from './footer/footer.component';
+import { ContactMeComponent } from './contact-me/contact-me.component';
+import { FormsModule } from '@angular/forms';
+import { ProjectsComponent } from './projects/projects.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +21,15 @@ import { CertificationComponent } from './certification/certification.component'
     HomeComponent,
     ExperienceComponent,
     SkillComponent,
-    CertificationComponent
+    CertificationComponent,
+    FooterComponent,
+    ContactMeComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

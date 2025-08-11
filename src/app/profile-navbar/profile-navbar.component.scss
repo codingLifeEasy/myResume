@@ -1,13 +1,14 @@
 .navbar {
-  background-color: #2c364a;
+  background: linear-gradient(145deg,rgb(92, 1, 145), rgb(132, 16, 204));
   padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 4px linear-gradient(145deg,rgb(183, 121, 207), rgb(132, 16, 204));
   align-items: center; 
   border-radius: 10px 10px 10px 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-left {
@@ -27,6 +28,8 @@
     font-weight: 25px;
     padding: 0px 10px 0px 10px;
     font-family: "Bitcount Grid Single", system-ui;
+    // //font-family: "Fascinate", system-ui;
+    // font-family: "Bungee Spice", sans-serif;
     font-optical-sizing: auto;
     font-weight: 25px;
     font-style: normal;

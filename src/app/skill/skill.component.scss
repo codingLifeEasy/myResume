@@ -5,13 +5,14 @@
   max-width: 700px;  /* Adjust width as needed */
   margin: auto;
   padding: 20px;
+  padding-bottom: 70px;
 }
 .skill-card {
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: #1e293b;
-  color: white;
+  background: linear-gradient(270deg,rgb(136, 27, 199), rgb(191, 148, 240), );
+  color: rgb(0, 0, 0);
   border: 1px solid #cbd5e1;
   border-radius: 10px;
   padding: 0.8rem 1.2rem;
@@ -36,4 +37,53 @@
     transform: translateY(-4px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
   }
+}
+.headline-container {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  height: 7vh;           /* full viewport height */
+}
+
+.headline {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  color: #fff;
+  font-size: 2.7rem;
+  margin-bottom: 25px;
+}
+.buttonsForSkills {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  justify-content: center; /* center vertically */
+  align-items: center;     /* center horizontally */
+  gap: 1rem;
+  //min-height: 100vh; /* optional: center in full screen */
+}
+
+.sub-buttons {
+  display: flex; /* stack vertically */
+  gap: 0.75rem;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+button {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  padding: 12px 18px;
+  background: linear-gradient(270deg, rgb(100, 30, 180), rgb(92, 1, 145));
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  background-size: 200% auto;
+  border: 1px solid transparent;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+  border: 1px solid white; /* thin white border */
 }

@@ -1,6 +1,19 @@
+.headline-container {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  height: 7vh;           /* full viewport height */
+}
+
+.headline {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 0px;
+}
 .timeline-wrapper {
   position: relative;
-  margin: 4rem auto;
+  margin: 1rem auto;
   width: 90%;
   max-width: 1200px;
   padding: 2rem 0;
@@ -15,7 +28,7 @@
   top: 0;
   width: 4px;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.973);
   transform: translateX(-50%);
   z-index: 1;
 }
@@ -27,7 +40,7 @@
   box-sizing: border-box;
 
   .content {
-    background-color: #262e3e;
+    background-color: #950cf0;
     padding: 1.5rem;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -116,7 +129,7 @@
   }
 }
 .timeline-item .content {
-  background-color: #262e3e;
+  background: linear-gradient(145deg,rgb(92, 1, 145), rgb(132, 16, 204));
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -148,7 +161,7 @@
   top: 2rem;
   width: 20px;
   height: 20px;
-  background-color: #111827;
+  background: linear-gradient(145deg,rgb(86, 41, 112), rgb(40, 10, 58));
   border: 3px solid #fff;
   border-radius: 50%;
   z-index: 3;
@@ -165,7 +178,7 @@
   position: relative;
   margin: 0.5rem 0;
   padding: 0.5rem 1rem;
-  background-color: #1f2937;
+  background-color: linear-gradient(145deg,rgb(217, 150, 255), rgb(156, 0, 247));
   border-radius: 8px;
   transition: all 0.3s ease;
   cursor: pointer;

@@ -1,5 +1,17 @@
+<div class="headline-container">
+  <h2 class="headline">Skills</h2>
+</div>
+<div class="buttonsForSkills">
+  <button class="main-btn" (click)="clickedSkill('all')">All</button>
+  <div class="sub-buttons">
+    <button (click)="clickedSkill('web')">Web Development</button>
+    <button (click)="clickedSkill('backend')">BackEnd</button>
+    <button (click)="clickedSkill('database')">DataBase</button>
+    <button (click)="clickedSkill('other')">Other required Skills</button>
+  </div>
+</div>
 <div class="skills-grid">
-  <div class="skill-card" *ngFor="let skill of skills">
+  <div class="skill-card" *ngFor="let skill of selectedSkills">
     <img [src]="skill.icon" alt="{{ skill.name }} icon" />
     <span>{{ skill.name }}</span>
   </div>
