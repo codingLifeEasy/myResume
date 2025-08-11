@@ -217,3 +217,15 @@
   opacity: 1;
   transform: translateY(-50%) translateX(10px);
 }
+@media screen and (max-width: 768px) {
+  .headline-container {
+    margin-top: 60px; /* Adjust this based on navbar height */
+  }
+}
+
+/* Hide the vertical timeline line on mobile */
+@media screen and (max-width: 768px) {
+  .timeline-line {
+    display: none;
+  }
+}
