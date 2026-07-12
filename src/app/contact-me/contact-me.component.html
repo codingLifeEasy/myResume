@@ -1,22 +1,16 @@
 <div class="contct-container">
-  <!-- Left Side: Contact Form -->
   <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-left">
     <div class="contact-left-title">
-      <h2>Get in Touch</h2>
+      <h2>Get In Touch</h2>
+      <p style="color:#94a3b8;font-size:14px;margin-bottom:20px;">Have a data engineering opportunity? Let's talk.</p>
       <hr>
     </div>
-
     <input type="hidden" name="access_key" [value]="web3formsKey">
-
     <input type="text" placeholder="Your Name" name="name" class="contact-inputs" ngModel required>
     <input type="email" placeholder="Your Email" name="email" class="contact-inputs" ngModel required>
     <textarea placeholder="Your Message" name="message" class="contact-inputs" ngModel required></textarea>
-
-    <button type="submit" [disabled]="loading">
-      {{ loading ? 'Sending...' : 'Send Message' }}
-    </button>
-
-    <p *ngIf="successMessage" style="color: lightgreen;">{{ successMessage }}</p>
-    <p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
+    <button type="submit" [disabled]="loading">{{ loading ? 'Sending...' : 'Send Message' }}</button>
+    <p *ngIf="successMessage" style="color:#06b6d4;">{{ successMessage }}</p>
+    <p *ngIf="errorMessage" style="color:#ef4444;">{{ errorMessage }}</p>
   </form>
 </div>
