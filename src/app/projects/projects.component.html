@@ -1,39 +1,25 @@
-<section class="projects">
-  <h2>My Angular Projects</h2>
-
-  <div class="project-card">
-    <h3>📂 Audit & Content Management Portal</h3>
-    <span class="date">Aug 2022 – Apr 2023</span>
-    <p>Developed a complex Angular-based document management system for enterprise auditing and content tracking.</p>
-    <ul>
-      <li>User-specific workspaces with secure access control</li>
-      <li>Document categorization, thumbnails, and advanced search</li>
-      <li>Document download, share, preview, and print features</li>
-      <li>Dynamic authentication & secure token handling</li>
-    </ul>
+<section class="projects-section">
+  <div class="section-header">
+    <span class="section-tag">Projects</span>
+    <h2 class="section-title">Data Engineering <span class="highlight">In Action</span></h2>
+    <div class="section-divider"></div>
   </div>
-
-  <div class="project-card">
-    <h3>🔑 License Access Management System</h3>
-    <span class="date">May 2023 – Jan 2024</span>
-    <p>Built a user onboarding and licensing system with strict approval workflows.</p>
-    <ul>
-      <li>Dynamic Angular forms with validation</li>
-      <li>Role-based approval workflow</li>
-      <li>Automated email notifications</li>
-      <li>License association logic with security compliance</li>
-    </ul>
-  </div>
-
-  <div class="project-card">
-    <h3>🤖 Feature Enhancement & AI Integration</h3>
-    <span class="date">Feb 2024 – Present</span>
-    <p>Developed an AI-assisted Angular app for non-technical users to resolve document upload issues.</p>
-    <ul>
-      <li>Error-to-solution mapping with AI integration</li>
-      <li>Real-time document metadata validation</li>
-      <li>User-friendly guidance for failed uploads</li>
-    </ul>
+  <div class="projects-grid">
+    <div class="project-card" *ngFor="let project of projects">
+      <div class="card-header">
+        <div class="card-icon"><i class="fas" [ngClass]="project.icon"></i></div>
+        <div><h3 class="card-title">{{ project.title }}</h3><p class="card-subtitle">{{ project.subtitle }}</p></div>
+      </div>
+      <span class="card-period">{{ project.period }}</span>
+      <p class="card-description">{{ project.description }}</p>
+      <div class="card-metrics">
+        <div class="metric" *ngFor="let m of project.metrics">
+          <span class="metric-value">{{ m.value }}</span>
+          <span class="metric-label">{{ m.label }}</span>
+        </div>
+      </div>
+      <ul class="card-highlights"><li *ngFor="let h of project.highlights">{{ h }}</li></ul>
+      <div class="card-tech"><span class="tech-tag" *ngFor="let t of project.tech">{{ t }}</span></div>
+    </div>
   </div>
 </section>
-
