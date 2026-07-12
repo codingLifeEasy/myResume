@@ -1,41 +1,23 @@
-<div class="headline-container">
-  <h1 class="headline">4 years of experience</h1>
-</div>
-<div class="timeline-wrapper">
-  <div class="timeline-line"></div>
-<div class="timeline-item right">
-  <div class="content">
-    <h3>TCS Client's Admin Project</h3>
-    <p>Angular Developer</p>
-    <p>On this project I had hands-on experience working on:</p>
-    <ul class="app-list">
-      <li data-info="Audit document management system and media management">Audit and media file management system</li>
-      <li data-info="Handles user registrations and onboarding">Organization's internal user registration system</li>
-      <li data-info="Bulk data uploading and status tracking system">Bulk data operations web app</li>
-      <li data-info="Admin dashboard and control panel">Admin and license management system</li>
-      <li data-info="Anonymous user access to web services">External user login and registration web app</li>
-    </ul>
-    <p>this applications .</p>
-    <span>18/09/2022 - currently working on this project</span>
+<section class="experience-section">
+  <div class="section-header">
+    <span class="section-tag">Experience</span>
+    <h2 class="section-title">Where I've <span class="highlight">Worked</span></h2>
+    <div class="section-divider"></div>
   </div>
-</div>
-
-  <div class="timeline-item left">
-    <div class="content">
-      <h2>TCS</h2>
-      <h3>TCS Client Account</h3>
-      <p>Associate System Engineer</p>
-      <p>My 1st application Client Registration using Angular Forms etc.</p>
-      <span>15/06/2022 - 30/08/2022</span>
+  <div class="timeline-wrapper">
+    <div class="timeline-line"></div>
+    <div *ngFor="let exp of experiences" class="timeline-item" [ngClass]="exp.side">
+      <div class="content">
+        <div class="content-header">
+          <span class="company">{{ exp.company }}</span>
+          <span class="period">{{ exp.period }}</span>
+        </div>
+        <h3 class="exp-title">{{ exp.title }}</h3>
+        <p class="role-tag">{{ exp.role }}</p>
+        <p class="description">{{ exp.description }}</p>
+        <ul class="highlights"><li *ngFor="let h of exp.highlights">{{ h }}</li></ul>
+        <div class="tech-tags"><span class="tech-tag" *ngFor="let t of exp.tech">{{ t }}</span></div>
+      </div>
     </div>
   </div>
-
-  <div class="timeline-item right">
-    <div class="content">
-      <h2>TCS</h2>
-      <h3>ILP Tranning</h3>
-      <p>Associate System Engineer</p>
-      <span>29/12/2021 - 11/06/2022</span>
-    </div>
-  </div>
-</div>
+</section>
