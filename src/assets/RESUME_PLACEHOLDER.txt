@@ -1,0 +1,2 @@
+This is a placeholder for Subrata's Data Engineering resume.
+Please place SubrataDas_DataEngineer_Resume.pdf in src/assets/
