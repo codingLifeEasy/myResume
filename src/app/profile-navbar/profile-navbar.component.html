@@ -1,23 +1,21 @@
 <nav class="navbar">
   <div class="navbar-left">
-    <img src="assets/profile.png" alt="Profile" class="profile-img" />
+    <div class="brand-icon">
+      <i class="fas fa-database"></i>
+    </div>
     <span class="profile-name">Subrata Das</span>
-    <!-- Hamburger Button -->
-    <button class="burger" (click)="toggleMenu()">
-      &#9776;
-    </button>
+    <span class="profile-title">Data Engineer</span>
+    <button class="burger" (click)="toggleMenu()">&#9776;</button>
   </div>
 
   <ul class="navbar-links" [ngClass]="{'open': menuOpen}">
-    <li><a routerLink="/home" routerLinkActive="active"  (click)="closeMenu()">home</a></li>
-    <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About Me</a></li>
+    <li><a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a></li>
+    <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a></li>
     <li><a routerLink="/experience" routerLinkActive="active" (click)="closeMenu()">Experience</a></li>
     <li><a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">Skills</a></li>
     <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Projects</a></li>
-    <li><a routerLink="/certificates" routerLinkActive="active" (click)="closeMenu()">Certificates</a></li>
-    <li><a routerLink="/contact-me" routerLinkActive="active" (click)="closeMenu()">Contact Me</a></li>
-    <li>
-      <a href="assets/SubrataDas7001188620CV1.pdf" download="SubrataDas7001188620CV1.pdf" class="resume-link">resume</a>
-    </li>
+    <li><a routerLink="/certificates" routerLinkActive="active" (click)="closeMenu()">Certifications</a></li>
+    <li><a routerLink="/contact-me" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
+    <li><a href="assets/SubrataDas_DataEngineer_Resume.pdf" download class="resume-btn"><i class="fas fa-download"></i> Resume</a></li>
   </ul>
 </nav>
