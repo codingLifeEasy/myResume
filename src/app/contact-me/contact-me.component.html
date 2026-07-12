@@ -1,16 +1,68 @@
-<div class="contct-container">
-  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-left">
-    <div class="contact-left-title">
-      <h2>Get In Touch</h2>
-      <p style="color:#94a3b8;font-size:14px;margin-bottom:20px;">Have a data engineering opportunity? Let's talk.</p>
-      <hr>
+<section class="contact-section">
+  <div class="section-header">
+    <span class="section-tag">Contact</span>
+    <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="contact-wrapper">
+    <div class="contact-info">
+      <h3>Let's work together</h3>
+      <p>Have a data engineering opportunity or just want to connect? Drop me a message and I'll get back to you.</p>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+        <div>
+          <span class="info-label">Email</span>
+          <a href="mailto:subratadasworking@gmail.com">subratadasworking@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="fab fa-linkedin-in"></i></div>
+        <div>
+          <span class="info-label">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/subrata-das-7001188620/" target="_blank">linkedin.com/in/subrata-das</a>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="fab fa-github"></i></div>
+        <div>
+          <span class="info-label">GitHub</span>
+          <a href="https://github.com/codingLifeEasy" target="_blank">github.com/codingLifeEasy</a>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div>
+          <span class="info-label">Location</span>
+          <span class="info-value">Kolkata, India</span>
+        </div>
+      </div>
     </div>
-    <input type="hidden" name="access_key" [value]="web3formsKey">
-    <input type="text" placeholder="Your Name" name="name" class="contact-inputs" ngModel required>
-    <input type="email" placeholder="Your Email" name="email" class="contact-inputs" ngModel required>
-    <textarea placeholder="Your Message" name="message" class="contact-inputs" ngModel required></textarea>
-    <button type="submit" [disabled]="loading">{{ loading ? 'Sending...' : 'Send Message' }}</button>
-    <p *ngIf="successMessage" style="color:#06b6d4;">{{ successMessage }}</p>
-    <p *ngIf="errorMessage" style="color:#ef4444;">{{ errorMessage }}</p>
-  </form>
-</div>
+
+    <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="contact-form">
+      <div class="form-row">
+        <input type="text" placeholder="Your Name" name="name" class="contact-inputs" ngModel required>
+      </div>
+      <div class="form-row">
+        <input type="email" placeholder="Your Email" name="email" class="contact-inputs" ngModel required>
+      </div>
+      <div class="form-row">
+        <input type="text" placeholder="Subject" name="subject" class="contact-inputs" ngModel>
+      </div>
+      <div class="form-row">
+        <textarea placeholder="Your Message" name="message" class="contact-inputs" ngModel required></textarea>
+      </div>
+      <input type="hidden" name="access_key" [value]="web3formsKey">
+      <button type="submit" [disabled]="loading">
+        {{ loading ? 'Sending...' : 'Send Message' }}
+        <i class="fas fa-arrow-right" *ngIf="!loading"></i>
+      </button>
+      <p *ngIf="successMessage" class="success-msg">{{ successMessage }}</p>
+      <p *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</p>
+    </form>
+  </div>
+</section>
