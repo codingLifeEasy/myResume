@@ -1,3 +1,17 @@
-<a href="https://learn.microsoft.com/api/credentials/share/en-us/Subratadasworking-9395/EA067892AFFF3266?sharingId=E1477A61EDFD8A55" target="_blank" class="cert-link">
-  <img src="assets/Az-104.png" alt="Azure Certification Badge" class="cert-img" />
-</a>
+<section class="certs-section">
+  <div class="section-header">
+    <span class="section-tag">Certifications</span>
+    <h2 class="section-title">Verified <span class="highlight">Credentials</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="certs-grid">
+    <a *ngFor="let cert of certifications" [href]="cert.link" target="_blank" class="cert-card">
+      <div class="cert-image"><img [src]="cert.image" [alt]="cert.title"></div>
+      <div class="cert-info">
+        <h3>{{ cert.title }}</h3>
+        <span class="cert-issuer">{{ cert.issuer }}</span>
+        <span class="cert-date" *ngIf="cert.date">{{ cert.date }}</span>
+      </div>
+    </a>
+  </div>
+</section>
