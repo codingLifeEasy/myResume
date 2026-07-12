@@ -1,89 +1,11 @@
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));; /* Two columns */
-  gap: 20px;
-  max-width: 700px;  /* Adjust width as needed */
-  margin: auto;
-  padding: 20px;
-  padding-bottom: 70px;
-}
-.skill-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: linear-gradient(270deg,rgb(136, 27, 199), rgb(191, 148, 240), );
-  color: rgb(0, 0, 0);
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  padding: 0.8rem 1.2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-family: "Special Gothic Expanded One", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-
-  img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 50%
-  }
-
-  span {
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
-  }
-}
-.headline-container {
-  display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center;     /* center vertically */
-  height: 7vh;           /* full viewport height */
-}
-
-.headline {
-  font-family: "Special Gothic Expanded One", sans-serif;
-  color: #fff;
-  font-size: 2.7rem;
-  margin-bottom: 25px;
-}
-.buttonsForSkills {
-  display: flex;
-  flex-direction: column; /* stack vertically */
-  justify-content: center; /* center vertically */
-  align-items: center;     /* center horizontally */
-  gap: 1rem;
-  //min-height: 100vh; /* optional: center in full screen */
-}
-
-.sub-buttons {
-  display: flex; /* stack vertically */
-  gap: 0.75rem;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-button {
-  font-family: "Special Gothic Expanded One", sans-serif;
-  padding: 12px 18px;
-  background: linear-gradient(270deg, rgb(100, 30, 180), rgb(92, 1, 145));
-  border: none;
-  border-radius: 20px;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
-  background-size: 200% auto;
-  border: 1px solid transparent;
-}
-
-button:hover {
-  transform: scale(1.08);
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
-  border: 1px solid white; /* thin white border */
-}
+.skills-section { max-width: 900px; margin: 0 auto; padding: 80px 40px; animation: fadeIn 0.6s ease-out; }
+.section-header { text-align: center; margin-bottom: 48px; }
+.section-tag { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #2563eb; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; display: block; }
+.section-title { font-size: clamp(28px,4vw,40px); font-weight: 700; color: #f8fafc; margin-bottom: 16px; .highlight { color: #06b6d4; } }
+.section-divider { width: 60px; height: 3px; background: linear-gradient(90deg,#2563eb,#06b6d4); margin: 0 auto; border-radius: 2px; }
+.skills-filter { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; button { padding: 8px 18px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 6px; color: #94a3b8; font-size: 13px; font-family: 'Inter', sans-serif; cursor: pointer; transition: all 0.2s ease; &:hover { color: #f8fafc; border-color: rgba(37,99,235,0.3); background: rgba(37,99,235,0.05); } &.active { color: #f8fafc; background: #2563eb; border-color: #2563eb; } } }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(160px,1fr)); gap: 12px; }
+.skill-card { display: flex; align-items: center; gap: 10px; padding: 14px 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; transition: all 0.2s ease; &:hover { background: rgba(37,99,235,0.05); border-color: rgba(37,99,235,0.2); transform: translateY(-2px); } }
+.skill-dot { width: 8px; height: 8px; background: #2563eb; border-radius: 50%; flex-shrink: 0; }
+.skill-name { font-size: 14px; color: #cbd5e1; font-weight: 400; }
+@media (max-width: 768px) { .skills-section { padding: 48px 20px; } .skills-grid { grid-template-columns: repeat(auto-fill,minmax(140px,1fr)); } }

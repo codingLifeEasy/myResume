@@ -1,53 +1,43 @@
 import { Component } from '@angular/core';
-
+interface Skill { name: string; category: string; }
 @Component({
   selector: 'app-skill',
   templateUrl: './skill.component.html',
   styleUrls: ['./skill.component.scss']
 })
 export class SkillComponent {
-
-    skills = [
-    { name: 'Angular', icon: 'assets/angular2.webp',catego: 'web' },
-    { name: 'css', icon: 'assets/css.jpg',catego: 'web' },
-    { name: 'Rxjs', icon: 'assets/Rxjs.jpg',catego: 'web' },
-    { name: 'Typescript', icon: 'assets/typescipt1.png',catego: 'web' },
-    { name: 'Visual Studio Code', icon: 'assets/visulastudio.png',catego: 'other' },
-    { name: 'HTML5', icon: 'assets/html.jpg' ,catego: 'web'},
-    { name: 'CSS3', icon: 'assets/css.jpg',catego: 'web' },
-    { name: 'Node Js', icon: 'assets/nodejs.webp',catego: 'backend' },
-    { name: 'Bootstrap', icon: 'assets/bootstrap.jpg',catego: 'web' },
-    { name: 'Python', icon: 'assets/python.jpg',catego: 'backend' },
-    { name: 'Django Rest FrameWork', icon: 'assets/djRestFramework.png',catego: 'backend' },
-    { name: 'IIS', icon: 'assets/IIS.jpg',catego: 'other' },
-    { name: 'mySql', icon: 'assets/mysql-logo.svg',catego: 'database' },
-    { name: 'postgresql', icon: 'assets/post.png',catego: 'database' },
-    { name: 'javaScript', icon: 'assets/javascript.png',catego: 'web' },
-    { name: 'Azure Administrator', icon: 'assets/Azureasso.png',catego: 'other' },
-    { name: 'Oauth2 Authetication', icon: 'assets/oauth-2.png',catego: 'other' },
-    { name: 'Azure FireWall', icon: 'assets/Azureasso.png',catego: 'other' },
+  categories = [
+    { key: 'all', label: 'All' },
+    { key: 'cloud', label: 'Cloud & Big Data' },
+    { key: 'etl', label: 'ETL & Orchestration' },
+    { key: 'languages', label: 'Languages' },
+    { key: 'databases', label: 'Databases' },
+    { key: 'devops', label: 'DevOps & Tools' }
   ];
-  selectedSkills: {name:string, icon: string ,catego: string }[] = this.skills;
-  clickedSkill(value:string){
-    if(value === 'all'){
-      this.selectedSkills = this.skills
-    }
-    else if(value === 'web'){
-        this.selectedSkills = this.skills.filter(skill => skill.catego === 'web');
-      
-      }
-    else if(value === 'backend'){
-        this.selectedSkills = this.skills.filter(skill => skill.catego === 'backend');
-      
-      }
-    else if(value === 'other'){
-        this.selectedSkills = this.skills.filter(skill => skill.catego === 'other');
-      
-      }
-    else if(value === 'database'){
-        this.selectedSkills = this.skills.filter(skill => skill.catego === 'database');
-      
-      }
-    }
-
+  activeCategory = 'all';
+  allSkills: Skill[] = [
+    { name: 'Azure Databricks', category: 'cloud' },
+    { name: 'Azure Synapse Analytics', category: 'cloud' },
+    { name: 'Azure Data Lake Gen2', category: 'cloud' },
+    { name: 'Delta Lake', category: 'cloud' },
+    { name: 'Apache Spark', category: 'cloud' },
+    { name: 'Azure Data Factory', category: 'etl' },
+    { name: 'Databricks Workflows', category: 'etl' },
+    { name: 'SSIS', category: 'etl' },
+    { name: 'PySpark', category: 'languages' },
+    { name: 'Python', category: 'languages' },
+    { name: 'SQL', category: 'languages' },
+    { name: 'TypeScript', category: 'languages' },
+    { name: 'SQL Server', category: 'databases' },
+    { name: 'Azure SQL DB', category: 'databases' },
+    { name: 'Power BI', category: 'devops' },
+    { name: 'Azure DevOps', category: 'devops' },
+    { name: 'CI/CD', category: 'devops' },
+    { name: 'Git', category: 'devops' }
+  ];
+  get filteredSkills(): Skill[] {
+    if (this.activeCategory === 'all') return this.allSkills;
+    return this.allSkills.filter(s => s.category === this.activeCategory);
   }
+  setCategory(cat: string) { this.activeCategory = cat; }
+}
